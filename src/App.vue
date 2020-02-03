@@ -78,9 +78,8 @@
 
 
 
-    <v-footer app>
 
-      <v-footer padless>
+      <v-footer style="display: contents">
 
         <v-card flat tile class="text-center">
 
@@ -97,9 +96,6 @@
           <v-card-text class="pt-0">
             Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum.
             Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui.
-            Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices,
-            cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci.
-            Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
           </v-card-text>
 
           <v-divider></v-divider>
@@ -112,8 +108,6 @@
       </v-footer>
 
 
-    </v-footer>
-
   </v-app>
 
 </template>
@@ -125,13 +119,12 @@ export default {
   name: 'App',
   data () {
     return {
-      items: [
+      items : [
         { id: 1, name: 'Home', icon: 'mdi-view-dashboard', link: '/' },
         { id: 2, name: 'About', icon: 'mdi-image' },
-        { id: 3, name: 'Store', icon: 'mdi-help-box' },
-        { id: 4, name: 'Log in', icon: 'mdi-view-dashboard', link: '/login' },
-        { id: 5, name: 'Register', icon: 'mdi-view-dashboard', link: '/register' },
+        { id: 3, name: 'Store', icon: 'mdi-help-box' }
       ],
+
 
       icons: [
         'fab fa-facebook',
@@ -163,6 +156,7 @@ export default {
     user(value){
       if (value !== null && value !== undefined){
         this.notLogin = true;
+        this.$router.push('/')
       }else if(value === null && value === undefined){
         this.notLogin = false;
       }
